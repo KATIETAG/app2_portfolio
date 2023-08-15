@@ -20,3 +20,8 @@ with col2:
     success. A dedicated learner with an unwavering commitment to staying updated on industry trends and innovations.
     """
     st.info(content)
+
+content2 = """Below you can find some of the apps I have built in Python.Feel free to contact me!"""
+st.write(content2)
+
+
