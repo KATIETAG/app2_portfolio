@@ -5,10 +5,17 @@ st.header("Contact Me")
 
 with st.form(key='email_forms'):
     user_email = st.text_input("Your Email address")
-    message = st.text_area("Your Message")
-    message = message + "\n" + user_email
+    raw_message = st.text_area("Your Message")
+    # add a new line after Subject so From shows correctly
+    message = f"""\
+Subject: New email from {user_email}
+
+From: {user_email}
+{raw_message}
+"""
     button = st.form_submit_button("Submit")
 
     if button:
         # if button is presseed send an email
         send_email(message)
+        st.info("Your Email was sent successfully.")
